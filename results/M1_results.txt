@@ -1,0 +1,41 @@
+=== MODEL 1: Dictionary-based NER ===
+              precision    recall  f1-score   support
+
+      GLUTEN       0.70      0.76      0.73        55
+        SUSU       0.98      0.77      0.86        73
+       TELUR       1.00      0.60      0.75        20
+      KACANG       1.00      0.46      0.63        26
+     KEDELAI       0.90      0.77      0.83        48
+     SEAFOOD       1.00      0.71      0.83        17
+       WIJEN       1.00      0.71      0.83         7
+     SULFITE       1.00      0.47      0.64        17
+
+   micro avg       0.89      0.70      0.78       263
+   macro avg       0.95      0.66      0.76       263
+weighted avg       0.91      0.70      0.78       263
+ samples avg       0.64      0.57      0.58       263
+
+Micro  Precision : 0.8889
+Micro  Recall    : 0.6996
+Micro  F1        : 0.7830
+Macro  F1        : 0.7632
+
+M1_RESULTS = {'model': 'Dictionary NER (Baseline)', 'micro_precision': 0.8889, 'micro_recall': 0.6996, 'micro_f1': 0.783, 'macro_f1': 0.7632}
+
+
+=== RINGKASAN MODEL 1 ===
+
+Model     : Dictionary-based Rule NER (Greedy Longest-Match)
+Task      : NER + Category-level allergen detection
+Training  : Tidak perlu (rule-based)
+Keywords  : 176
+Kategori  : ['GLUTEN', 'SUSU', 'TELUR', 'KACANG', 'KEDELAI', 'SEAFOOD', 'WIJEN', 'SULFITE']
+
+--- Hasil Evaluasi (Gold Label, 50 produk) ---
+  micro_precision       : 0.8889
+  micro_recall          : 0.6996
+  micro_f1              : 0.783
+  macro_f1              : 0.7632
+
+Keunggulan: Cepat, transparan, presisi tinggi untuk exact match
+Kelemahan : Recall rendah, tidak generalisasi ke kata baru/variasi ejaan

@@ -1,0 +1,22 @@
+=== MODEL 4: IndoBERT NER (Gold Label Evaluation) ===
+              precision    recall  f1-score   support
+
+      GLUTEN       0.62      0.80      0.70        55
+        SUSU       0.95      0.79      0.87        73
+       TELUR       0.75      0.60      0.67        20
+      KACANG       0.65      0.77      0.70        26
+     KEDELAI       0.73      0.77      0.75        48
+     SEAFOOD       0.52      0.65      0.58        17
+       WIJEN       0.86      0.86      0.86         7
+     SULFITE       1.00      0.47      0.64        17
+
+   micro avg       0.74      0.75      0.74       263
+   macro avg       0.76      0.71      0.72       263
+weighted avg       0.77      0.75      0.74       263
+ samples avg       0.64      0.62      0.60       263
+
+Micro Precision : 0.7368
+Micro Recall    : 0.7452
+Micro F1        : 0.7410
+Macro F1        : 0.7195
+M4_RESULTS = {'model': 'IndoBERT NER', 'micro_precision': 0.7368, 'micro_recall': 0.7452, 'micro_f1': 0.741, 'macro_f1': 0.7195}

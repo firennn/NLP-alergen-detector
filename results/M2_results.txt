@@ -1,0 +1,41 @@
+=== MODEL 2: TF-IDF + Logistic Regression (Gold Label Evaluation) ===
+              precision    recall  f1-score   support
+
+      GLUTEN       0.86      0.22      0.35        55
+        SUSU       1.00      0.32      0.48        73
+       TELUR       1.00      0.10      0.18        20
+      KACANG       1.00      0.15      0.27        26
+     KEDELAI       0.88      0.31      0.46        48
+     SEAFOOD       0.17      0.06      0.09        17
+       WIJEN       0.00      0.00      0.00         7
+     SULFITE       0.00      0.00      0.00        17
+
+   micro avg       0.86      0.22      0.35       263
+   macro avg       0.61      0.14      0.23       263
+weighted avg       0.80      0.22      0.34       263
+ samples avg       0.33      0.21      0.25       263
+
+Micro Precision : 0.8636
+Micro Recall    : 0.2167
+Micro F1        : 0.3465
+Macro F1        : 0.2280
+
+M2_RESULTS = {'model': 'TF-IDF + Logistic Regression', 'micro_precision': 0.8636, 'micro_recall': 0.2167, 'micro_f1': 0.3465, 'macro_f1': 0.228}
+
+=== RINGKASAN MODEL 2 ===
+
+Model     : TF-IDF + OneVsRest Logistic Regression
+Task      : Multi-label text classification (document-level)
+Features  : TF-IDF unigram + bigram (max 15K fitur)
+Training  : Silver labels dari bio_labeler() pada OFF+Sintetis
+Train set : 3200 sampel
+Silver F1 : 0.8173 (micro, test split silver)
+
+--- Hasil Evaluasi Gold Label ---
+  micro_precision       : 0.8636
+  micro_recall          : 0.2167
+  micro_f1              : 0.3465
+  macro_f1              : 0.228
+
+Keunggulan: Belajar dari data, lebih fleksibel dari kamus exact-match
+Kelemahan : Document-level saja, tidak menangkap semantik kata

@@ -1,0 +1,29 @@
+=== TABEL PERBANDINGAN 4 MODEL ===
+Evaluasi: 137 produk Indonesia (anotasi manual, gold label)
+Metric   : category-level micro F1
+
+                      Model              Type    Silver F1  Gold F1  Macro F1
+         M1: Dictionary NER    Rule-based NER          N/A   0.7830    0.7632
+            M2: TF-IDF + LR ML Classification       0.8173   0.3465    0.2280
+              M3: mBERT NER    DL NER (multi)         1.000   0.6742    0.6746
+M4: IndoBERT NER (Proposed)       DL NER (ID)  N/A (OpsiA)   0.7410    0.7195
+
+=== PER-KATEGORI GOLD F1 ===
+
+Kategori     M1      M2      M3      M4
+GLUTEN      0.73    0.35    0.63    0.70
+SUSU        0.86    0.48    0.80    0.87
+TELUR       0.75    0.18    0.76    0.67
+KACANG      0.63    0.27    0.43    0.70
+KEDELAI     0.83    0.46    0.80    0.75
+SEAFOOD     0.83    0.09    0.49    0.58
+WIJEN       0.83    0.00    0.80    0.86
+SULFITE     0.64    0.00    0.69    0.64
+
+=== CATATAN ===
+- Silver F1 M3 = 1.0 — kemungkinan overfitting pada silver label (circular eval)
+- M2 recall sangat rendah (0.22) — TF-IDF tidak cukup untuk domain ini, WIJEN & SULFITE = 0
+- M4 IndoBERT unggul secara keseluruhan (Gold Micro F1 = 0.7410)
+- M1 Dictionary cukup kompetitif (0.7830) tapi recall terbatas (0.70)
+- Silver F1: evaluasi pada test split dari data yang sama (circular evaluation, tidak representatif)
+- Gold F1  : evaluasi pada produk Indonesia yang dianotasi manual (lebih jujur)
